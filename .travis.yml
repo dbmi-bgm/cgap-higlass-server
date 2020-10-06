@@ -1,0 +1,16 @@
+# Based on http://lmjohns3.com/2015/06/using-travis-ci-with-miniconda-scipy-and-nose.html
+# Tweaked to specify versions on everything for stability.
+services:
+  - docker
+
+before_install:
+  - docker build -t higlass-server -f docker-context/Dockerfile .
+
+install:
+  - docker run -d --cap-add SYS_ADMIN --device /dev/fuse --security-opt apparmor:unconfined --name higlass-server higlass-server
+
+script:
+  - docker exec -it higlass-server ./test.sh
+
+after_failure:
+  - docker exec -it higlass-server cat /data/log/hgs.log
