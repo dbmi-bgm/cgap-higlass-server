@@ -23,7 +23,7 @@ from django.http import HttpResponse
 
 from clodius.tiles.geo import get_tile_pos_from_lng_lat
 
-import higlass_server.settings as hss
+import higlass_server.settings_base as hss
 
 from higlass_server.utils import getRdb
 from fragments.exceptions import SnippetTooLarge

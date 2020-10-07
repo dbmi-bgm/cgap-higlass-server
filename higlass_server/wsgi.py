@@ -12,6 +12,6 @@ import sys
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "higlass_server.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "higlass_server.settings_prod")
 
 application = get_wsgi_application()

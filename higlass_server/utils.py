@@ -1,5 +1,5 @@
 import redis
-import higlass_server.settings as hss
+import higlass_server.settings_base as hss
 
 from redis.exceptions import ConnectionError
 

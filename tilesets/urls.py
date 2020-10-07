@@ -2,7 +2,7 @@ from django.conf.urls import url, include
 from tilesets import views
 from rest_framework.routers import SimpleRouter
 from rest_framework_swagger.views import get_swagger_view
-from rest_framework.authtoken.views import obtain_auth_token
+#from rest_framework.authtoken.views import obtain_auth_token
 
 schema_view = get_swagger_view(title='Pastebin API')
 # Create a router and register our viewsets with it.
@@ -25,7 +25,8 @@ urlpatterns = [
     url(r'^link_tile/$', views.link_tile),
     url(r'^register_url/$', views.register_url),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^api-token-auth/', obtain_auth_token),
+    #url(r'^api-token-auth/', obtain_auth_token),
+    url(r'^gtais/$', views.get_token_and_init_session),
     url(r'^chrom-sizes/$', views.sizes),
     url(r'^available-chrom-sizes/$', views.available_chrom_sizes)
     #url(r'^users/$', views.UserList.as_view()),

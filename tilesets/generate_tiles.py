@@ -26,7 +26,7 @@ import higlass.tilesets as hgti
 
 import clodius.tiles.multivec as ctmu
 
-import higlass_server.settings as hss
+import higlass_server.settings_base as hss
 
 def get_tileset_datatype(tileset):
     '''

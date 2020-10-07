@@ -11,7 +11,7 @@ import django.test as dt
 import tilesets.models as tm
 import website.views as wv
 
-import higlass_server.settings as hss
+import higlass_server.settings_base as hss
 
 class SiteTests(dt.TestCase):
     def setUp(self):

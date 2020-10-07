@@ -9,7 +9,7 @@ import tempfile
 
 import tilesets.models as tm
 
-import higlass_server.settings as hss
+import higlass_server.settings_base as hss
 
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpRequest, HttpResponse, \

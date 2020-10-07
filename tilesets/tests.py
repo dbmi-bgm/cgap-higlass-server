@@ -18,7 +18,7 @@ import os.path as op
 import numpy as np
 import rest_framework.status as rfs
 import tilesets.models as tm
-import higlass_server.settings as hss
+import higlass_server.settings_base as hss
 import tilesets.generate_tiles as tgt
 import slugid
 

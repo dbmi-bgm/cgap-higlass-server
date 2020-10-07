@@ -11,7 +11,7 @@ try:
 except:
     import pickle
 
-import higlass_server.settings as hss
+import higlass_server.settings_base as hss
 
 from rest_framework.authentication import BasicAuthentication
 from .drf_disable_csrf import CsrfExemptSessionAuthentication

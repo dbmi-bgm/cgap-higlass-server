@@ -90,13 +90,6 @@ SECRET_KEY = get_setting('SECRET_KEY', slugid.nice())
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = get_setting('DEBUG', False)
 
-ALLOWED_HOSTS = [
-    'localhost',
-    'cgap-higlass.com',
-]
-
-if 'SITE_URL' in os.environ:
-    ALLOWED_HOSTS += [os.environ['SITE_URL']]
 
 # this specifies where uploaded files will be place
 # (e.g. BASE_DIR/media/uplaods/file.x)
@@ -225,10 +218,11 @@ AUTHENTICATION_BACKENDS = (
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ALLOW_CREDENTIALS = True
 
-CORS_ORIGIN_WHITELIST = [
-    'http://localhost:8080',
-    'http://localhost:6543'
-]
+CORS_ORIGIN_WHITELIST = []
+
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 # CORS_ALLOW_HEADERS = default_headers
 
@@ -301,8 +295,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-UPLOAD_ENABLED = get_setting('UPLOAD_ENABLED', True)
-PUBLIC_UPLOAD_ENABLED = get_setting('PUBLIC_UPLOAD_ENABLED', True)
+UPLOAD_ENABLED = get_setting('UPLOAD_ENABLED', False)
+PUBLIC_UPLOAD_ENABLED = get_setting('PUBLIC_UPLOAD_ENABLED', False)
 
 SNIPPET_MAT_MAX_OUT_DIM = get_setting('SNIPPET_MAT_MAX_OUT_DIM', 512)
 SNIPPET_MAT_MAX_DATA_DIM = get_setting('SNIPPET_MAT_MAX_DATA_DIM', 4096)

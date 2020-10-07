@@ -7,7 +7,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "start": "python manage.py runserver localhost:8001",
+    "startdev": "python manage.py runserver localhost:8001 --settings=higlass_server.settings_dev",
+    "startprod": "python manage.py runserver localhost:8001 --settings=higlass_server.settings_prod",
     "startmac": "brew services start redis && npm start",
     "test": "./test.sh"
   }
